@@ -8,7 +8,7 @@
 //console.log(objeto)
 
 
-const math = require('./math/index')
+const math = require('./math/index') //modulo en ruta local
 console.log(math.add(1,2))
 console.log(math.substract(1,2))
 console.log(math.divide(1,2))
