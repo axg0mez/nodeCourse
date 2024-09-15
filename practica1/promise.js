@@ -1,6 +1,6 @@
 //Codigo async utiliza promesas
-const { readFile } = require("fs");
-const {promisify} = require('util')
+const { readFile } = require("fs/promises");
+//const {promisify} = require('util') //esto puede no ser necesario, los modulos pueden tener sus metodos para devolucion de promesas como po ejemplo fs/promises
 
 
 //funcion que retorna una promesa
@@ -16,7 +16,7 @@ const {promisify} = require('util')
 //  });
 //};
 //reemplazo por util
-const readFilePromise = promisify(readFile)
+//const readFilePromise = promisify(readFile) 
 
 
 //con las promesas podemos utilizar las funciones post pejecucion then y catch
@@ -31,10 +31,10 @@ const readFilePromise = promisify(readFile)
 //await especifica que el codigo a ajecutar es asincrono y necesita estar dentro de una funcion marcada con async
 async function read() {
   try {
-    const result = await readFilePromise("./practica1/data/first.txt", 'utf-8');
-    const result2 = await readFilePromise("./practica1/data/second.txt", 'utf-8');
-    const result3 = await readFilePromise("./practica1/data/third.txt", 'utf-8');
-    const result4 = await readFilePromise("./practica1/data/fourth.txt", 'utf-8');
+    const result = await readFile("./practica1/data/first.txt", 'utf-8');
+    const result2 = await readFile("./practica1/data/second.txt", 'utf-8');
+    const result3 = await readFile("./practica1/data/third.txt", 'utf-8');
+    const result4 = await readFile("./practica1/data/fourth.txt", 'utf-8');
 
     //throw new Error('Error controlado pruebas') //ERROR CONTROLADO
     console.log(result);
